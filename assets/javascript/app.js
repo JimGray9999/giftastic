@@ -9,15 +9,16 @@ $(document).ready(function() {
 	var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=wilford+brimley&api_key=8822962b66364b79b9f1e796900f3a96&limit=10");
 	xhr.done(function(data) { console.log("success got data", data); });
 
-	//to do: function to create buttons for each searchGIF choice
-		// buttons to display at top of page
-		// jQuery to render each button in a for loop
-		// use CSS class to style the buttons
+	// function to create buttons for each searchGIF choice
 	function createButtons() {	
 
 		for (i = 0 ; i < searchGIFs.length ; i++){
+			
+			//add +'s to the button values, for API call searches
+			var dataValue = searchGIFs[i].replace(/\s+/g,"+");
 
-			$("#buttons").append('<button class="btn btn-info" value="' + searchGIFs[i] + '">' 
+			//create a button for each string in the searchGIFs array
+			$("#buttons").append('<button class="btn btn-info" value="' + dataValue + '">' 
 			+ searchGIFs[i]  + '</button>');
 		}
 	};
@@ -32,6 +33,9 @@ $(document).ready(function() {
 	// to do: toggle event for clicking each image to start and stop GIF animation
 
 	//to do: function - add a new search parameter
+	$("#add-me").click(function() {
+		console.log(this);
+	});	
 		// accept the entered field
 		// add the phrase as a string to the searchGIFs array
 		// call the createButtons function to build buttons
