@@ -37,7 +37,7 @@ $(document).ready(function() {
 
 		var search = $(this).attr("data-value");
 		console.log(search);
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=8822962b66364b79b9f1e796900f3a96&limit=10";
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=8822962b66364b79b9f1e796900f3a96&limit=10";
 
 		$.ajax({
 	      url: queryURL,
