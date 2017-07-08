@@ -81,5 +81,12 @@ $(document).ready(function() {
 		addButton();
 	});	
 
+	// to do: stop any animated gif
+	$("#stop-animate").on("click", function() {
+
+		// select all img with the .gif-it class
+		// if the img data-state === animate
+		// then change to the data-still src
+	});
 
 });
