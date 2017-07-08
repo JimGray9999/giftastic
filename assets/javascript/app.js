@@ -30,13 +30,8 @@ $(document).ready(function() {
 	};
 
 	createButtons(); // create the initial buttons
-
-	//to do: click event - change the images to the button selected
-		// need the image, rating from the API call data returned
-		// display the next 10 GIFs
-		// data.rating, data[i].images.fixed_height and data[i].images.fixed_height_still
 		
-	$(".show-gif").on("click", function() {
+	$("body").on("click", ".show-gif", function() {
 
 		$("#gifs").empty();
 
@@ -55,20 +50,19 @@ $(document).ready(function() {
 				$("#gifs").append('<img src="' 
 					+ response.data[i].images.fixed_height_still.url 
 					+'" data-still="' + response.data[i].images.fixed_height_still.url
-					+ '"data-animate="' + response.data[i].images.fixed_height.url 
+					+ '" data-animate="' + response.data[i].images.fixed_height.url 
 					+ '" data-state="still" alt="gif-' + (i + 1) 
-					+ '" class="gif">');
+					+ '" class="gif-it">');
 
 				$("#gifs").append('<p>Rating: ' + response.data[i].rating + '</p>');
 			};
     	});
 	});
 
-	// to do: toggle event for clicking each image to start and stop GIF animation
-
-
 	//function - animate gif on click
-	$(".gif").on("click", function(){
+	$("body").on("click", ".gif-it", function() {
+		console.log("image was clicked");
+
 		var state = $(this).attr("data-state");
 		console.log(state);
 
