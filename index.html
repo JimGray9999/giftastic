@@ -8,12 +8,17 @@
 		<!-- CSS links: reset.css, bootstrap.min.css, style.css -->
 	    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
 	    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 		
 		<title>GIFHY Stuff</title>
 	</head>
 	<body>
-		
+		<div class="top">
+			<h1 class="text-center">ALL THE GIFs!</h1>
+		</div>
 		<!-- list array of button choices
 		when button clicked, make API call for that search phrase
 		return gif images with the rating displayed -->
@@ -23,14 +28,17 @@
 				<!-- buttons go here -->
 			</div>
 			<div class="row">
-				<div id="gifs" class="col-md-12">
-					<!-- images will go here -->
-				</div>
 				<div class="col-md-4">
 					<input id="new-search" type="text">
 					<button id="add-me" class="btn btn-info">Add</button>
 				</div>
 			</div>
+			<div class="row">
+				<div id="gifs" class="col-md-12">
+					<!-- images will go here -->
+				</div>
+			</div>
+
 
 		</div>
 

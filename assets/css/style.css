@@ -1,0 +1,12 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	background-color: blue;
+	margin-top: 0px;
+	height: 30%;
+	font-size: 40px;
+	color: white;
+}
+

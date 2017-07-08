@@ -19,6 +19,7 @@ $(document).ready(function() {
 		console.log(searchGIFs);
 	};
 
+	// add a new button witht the input field as the text
 	function addButton() {
 
 		var dataValue = searchGIFs[searchGIFs.length - 1].replace(/\s+/g,"+");
@@ -30,7 +31,8 @@ $(document).ready(function() {
 	};
 
 	createButtons(); // create the initial buttons
-		
+	
+	// show images from button clicked	
 	$("body").on("click", ".show-gif", function() {
 
 		$("#gifs").empty();
@@ -43,8 +45,8 @@ $(document).ready(function() {
 	      url: queryURL,
     	  method: "GET"
     	}).done(function(response) {
-    		console.log(response);
 
+    		// build dynamic images from API call
 			for (i = 0 ; i < 10 ; i++){
 				
 				$("#gifs").append('<img src="' 
@@ -52,7 +54,7 @@ $(document).ready(function() {
 					+'" data-still="' + response.data[i].images.fixed_height_still.url
 					+ '" data-animate="' + response.data[i].images.fixed_height.url 
 					+ '" data-state="still" alt="gif-' + (i + 1) 
-					+ '" class="gif-it">');
+					+ '" class="gif-it img-responsive img-thumbnail">');
 
 				$("#gifs").append('<p>Rating: ' + response.data[i].rating + '</p>');
 			};
@@ -61,10 +63,8 @@ $(document).ready(function() {
 
 	//function - animate gif on click
 	$("body").on("click", ".gif-it", function() {
-		console.log("image was clicked");
 
 		var state = $(this).attr("data-state");
-		console.log(state);
 
 		if (state === "still"){
 			$(this).attr("src", $(this).attr("data-animate"));
